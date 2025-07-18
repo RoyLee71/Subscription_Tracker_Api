@@ -8,6 +8,7 @@ import subscriptionRouter from './routes/subscription.routes.js';
 import connectToDatabase from './database/mongodb.js';
 import errorMiddleware from './middlewares/error.middleware.js';
 import arcjetMiddleware from './middlewares/arcjet.middleware.js';
+import workflowRouter from './routes/workflow.routes.js';
 
 
 
@@ -24,6 +25,8 @@ app.use(arcjetMiddleware); // Arcjet middleware for security and rate limiting
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/subscriptions', subscriptionRouter);
+app.use('/api/v1/workflows', workflowRouter);
+
 
 // Error handling middleware
 app.use(errorMiddleware);
